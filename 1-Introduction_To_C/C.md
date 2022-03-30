@@ -210,9 +210,11 @@ printf("%d",x);
 
 NOTE: Whenever we need to check whether number is divisible or not from a number use Module operator(%) instead of divide operator(/). 
 
+----------------------------------
+
 ## Lec 16
 
-**BITWISE OPERATORS:**
+**<u>BITWISE OPERATORS:</u>**
 
 Bitwise AND        &
 Bitwise OR           |
@@ -221,9 +223,41 @@ Bitwise NOT         ~
 Right Shift            >>
 Left Shift              <<
 
+<u>**& Operator**</u>
+
 0 & 0 = 0
 0 & 1 = 0
 1 & 0 = 0
 1 & 1 = 1
 
 Note: 0,1 are operands of Bitwise Operator
+
+<img title="" src="./Images/2.png" alt="2.png" width="522">
+
+**<u>| Operator</u>**
+
+0 | 0 = 0
+0 | 1 = 1
+1 | 0 = 1
+1 | 1 = 1
+
+<img title="" src="./Images/3.png" alt="3.png" width="560">
+
+**<u>^ Operator</u>**
+
+0 ^ 0 = 0
+0 ^ 1 = 1
+1 ^ 0 = 1
+1 ^ 1 = 0
+
+<img title="" src="./images/4.png" alt="4.png" width="571">
+
+**<u>Right Shift</u>**
+
+<img title="" src="./Images/5.png" alt="5.png" width="574">
+
+**<u>Left Shift</u>**
+
+<img title="" src="./Images/6.png" alt="6.png" width="588">
+
+-----------
