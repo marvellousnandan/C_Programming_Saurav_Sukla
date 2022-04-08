@@ -367,8 +367,6 @@ int main(){
   — Predefined functions
   — User defined functions
 
-
-
 <u>**Technical Terms:**</u>
 
 * Function Definition
@@ -380,8 +378,6 @@ int main(){
 
 **<u>Note</u>**: Benefit of making a function is that It utilises memory properly i.e. Better Memory utilisaton.
 
-
-
 Interview Notes: 
 
 - Main function {i.e. **main()** } is called by operating system...
@@ -389,8 +385,6 @@ Interview Notes:
 - Execution of program starts with the main function i.e. main()
   
   (Chahe jitne bhi functions bana le program mai...)
-
-
 
 **<u>Remember</u>**:-
 
@@ -403,8 +397,6 @@ Interview Notes:
 - One function in the program must be main
 
 - Function consumes memory only when it is invoked and released from RAM as soon as it finishes its job.
-
-
 
 **<u>Benefits of function</u>**:-
 
@@ -422,12 +414,9 @@ Interview Notes:
 Ways to define a function:
 
 - Takes Nothing, Returns Nothing
--  Takes Something, Returns Nothing
--  Takes Nothing, Returns Something
--  Takes Something, Returns Something
-  
-  
-
+- Takes Something, Returns Nothing
+- Takes Nothing, Returns Something
+- Takes Something, Returns Something
 
 **<u>Takes Nothing, Returns Nothing</u>**
 
@@ -437,13 +426,11 @@ Ways to define a function:
 // Takes Nothing, Returns Nothing
 
 #include <stdio.h>
-// #include <conio.h>
+
 void main()
 {
     void add(void);
-  //  clrscr();
     add();
-//    getch();
 }
 void add()
 {
@@ -453,14 +440,15 @@ void add()
     c=a+b;
     printf("Sum is %d",c);
 }
-
 ```
+
+NOTE: **#include <conio.h>** is not a standard library... Don't use
+
+
 
 If function is return Nothing then for defining it we use "**void**" 
 
 Note: Definition of Predefined functions are present in the library file and The Decleration of that word is present in the Header File...
-
-
 
 e.g: 
 
@@ -475,8 +463,6 @@ Function declaration is used for compilers, so that they will understand the mea
 **<u>Takes Something, Returns Nothing</u>**
 
 <img src="./images/11.png" title="" alt="" width="542">
-
-
 
 (OTHER WAY OF WRITING THE SAME THING):
 
@@ -499,9 +485,9 @@ void main()
 // declaration of "add" function which is only used by main() function
     printf("Enter two numbers: ");
     scanf("%d%d", &x,&y);
-    
+
     add(x,y);   //Actual Argument/Parameter
-    
+
 }
 void add(int a, int b)  //Formal Parameter
 {
@@ -509,7 +495,28 @@ void add(int a, int b)  //Formal Parameter
     c=a+b;
     printf("Sum is %d",c);
 }
+```
 
+(Coding From my side, same as previous... (Purpose: Make Program simple) ):
+
+```c
+#include <stdio.h>
+void add(int a, int b)
+{
+    int c;
+    c=a+b;
+    printf("Sum is %d",c);
+}
+void main()
+{
+    int x,y;
+    void add(int,int);  
+    printf("Enter two numbers: ");
+    scanf("%d%d", &x,&y);
+
+    add(x,y);
+
+}
 ```
 
 --------------------
@@ -531,23 +538,20 @@ int add(void);
 void main()
 {
     int s;
-    
+
     s=add();
     printf("Sum is %d",s);
 }
 int add()
 {
     int a,b,c;
-    
+
     printf("Enter two numbers: ");
     scanf("%d%d",&a,&b);
     // c=a+b;
     return (a+b); //return c // return(c)
 }
-
 ```
-
-
 
 **<u>Takes Something, Returns Something</u>**
 
@@ -573,10 +577,7 @@ int add(int a, int b)
     c = a+b;
     return c;
 }
-
 ```
-
-
 
 ---------------------
 
