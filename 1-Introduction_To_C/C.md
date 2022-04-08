@@ -225,10 +225,13 @@ Left Shift              <<
 
 <u>**& Operator**</u>
 
-0 & 0 = 0
-0 & 1 = 0
-1 & 0 = 0
-1 & 1 = 1
+- 0 & 0 = 0
+
+- 0 & 1 = 0
+
+- 1 & 0 = 0
+
+- 1 & 1 = 1
 
 Note: 0,1 are operands of Bitwise Operator
 
@@ -236,21 +239,27 @@ Note: 0,1 are operands of Bitwise Operator
 
 **<u>| Operator</u>**
 
-0 | 0 = 0
-0 | 1 = 1
-1 | 0 = 1
-1 | 1 = 1
+- 0 | 0 = 0
+
+- 0 | 1 = 1
+
+- 1 | 0 = 1
+
+- 1 | 1 = 1
 
 <img title="" src="./Images/3.png" alt="3.png" width="560">
 
 **<u>^ Operator</u>**
 
-0 ^ 0 = 0
-0 ^ 1 = 1
-1 ^ 0 = 1
-1 ^ 1 = 0
+- 0 ^ 0 = 0
 
-<img title="" src="./images/4.png" alt="4.png" width="571">
+- 0 ^ 1 = 1
+
+- 1 ^ 0 = 1
+
+- 1 ^ 1 = 0
+
+![](./Images/4.png)
 
 **<u>Right Shift</u>**
 
