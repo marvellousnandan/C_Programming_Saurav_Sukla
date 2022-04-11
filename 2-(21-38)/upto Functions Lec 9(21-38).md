@@ -1,4 +1,4 @@
-## Lec 17
+## Lec 21 - Arithmetic Instruction in C (Part - 6)
 
 **<u>Relational Operator</u>**
 
@@ -28,7 +28,7 @@ int main(){
 
 ---------------------
 
-## Lec 18
+## Lec 22 - Arithmetic Instruction in C (Part - 7)
 
 **<u>Logical Operators:</u>**
 
@@ -90,9 +90,99 @@ int main(){
 }
 ```
 
+-------
+
+## Lec 23 - Conditional Operator in C language
+
+**Conditional Operator or Ternary Operator:**
+
+NOTE:
+
+Unary Operator: Need only one Oprand.     e.g: ++x
+
+Binary Operator: Need two Oprands.     e.g: x+y
+
+Ternary / Conditional Operator: Need 3 Oprands. e.g: 
+
+<img src="./images/2a.png" title="" alt="" width="452">
+
+<img src="./images/2b.png" title="" alt="" width="461">
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int x;
+   // x = 5>4?1,2,3:4,5,6;    // Output: 3
+   x = 5<4?1,2,3:4,5,6;    // Output: 4
+
+    // NOTE: Always choose which is closer to semicolumn(;)
+
+    printf("%d",x);
+    return 0;
+}
+```
+
+```c
+// Using call function
+#include <stdio.h>
+
+int fun(){
+    return(5>4?5:4);
+}
+int main(){
+    int x;
+    x = fun();
+    printf("%d",x);
+}
+```
+
+```c
+// Checking the Greatest number...
+#include <stdio.h>
+
+int main(){
+    int a,b;
+    printf("Enter two numbers: ");
+    scanf("%d%d",&a,&b);
+    printf("Greatest number is %d",a>b?a:b);
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+int main(){
+    int x,a=4,b=5;
+    a>b?x=a:(x=b);
+/* 
+NOTE: we need to use brackets() in x=b 
+i.e. (x=b) otherrwise it will show error. Compiler will use only
+[a>b?x=a:x] =b; Since Conditional Operator(i.e. ? : ) has more priority 
+then Assisgnment Operator(i.e. =)
+*/
+    printf("%d",x);
+    return 0;
+}
+```
+
+---------------
+
+## Lec 24 - Compound Assignment Operators in C
+
+Note: Compound assignment operators has low priority... (Exceptions are there)
+
+<img src="./images/2c.png" title="" alt="" width="573">
+
+e.g: 
+
+x*=3+4     => + operator works first then the Multiply works. Since, Compound assignment operators has low priority.
+
 ----------
 
-## Lec 19
+## Lec 25 - Lecture 6 Decision Control in C (Part - 1)
 
 **<u>CONTROL</u>**
 
@@ -137,7 +227,7 @@ return 0;
 
 -----------------
 
-## Lec 20
+## Lec 26 - Lecture 6 Decision Control in C (Part - 2)
 
 ## <u>if else</u>
 
@@ -163,7 +253,7 @@ return 0;
 
 ----------------------------
 
-## Lec 21
+## Lec 27 - Lecture 6 Decision Control in C (Part - 3)
 
 **<u>Conditional Operator ( ?:)       /    Ternary Operator</u>**
 
@@ -218,9 +308,167 @@ return 0;
 }
 ```
 
-------------------------
+----------
 
-## Lec 22    (Lecture 7 - Loops in C part - 1)
+## Lec 28 - Nested if else in C language
+
+<img src="./images/6a.png" title="" alt="" width="462">
+
+Example: To find the Greatest number in 3 numbers:
+
+<img src="./images/6b.png" title="" alt="" width="176">
+
+```c
+// To find the Greatest number in 3 numbers:
+
+#include <stdio.h>
+
+int main(){
+    int a,b,c;
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a,&b,&c);
+
+    if(a>b){
+        if(a>c)
+            printf("%d",a);
+        else
+            printf("%d",c);
+    }
+    else{
+        if(b>c)
+            printf("%d",b);
+        else
+            printf("%d",c);
+    }
+    return 0;
+}
+```
+
+(OR)
+
+```c
+// Using Conditional Operator
+
+#include <stdio.h>
+
+int main(){
+    int a,b,c;
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a,&b,&c);
+
+    if(a>b){
+        a>c?printf("%d",a):printf("%d",c);
+    }
+    else{
+        b>c?printf("%d",b):printf("%d",c);
+    }
+    return 0;
+}
+```
+
+(OR)
+
+```c
+// Using Conditional Operator (Simplifying it)
+
+#include <stdio.h>
+
+int main(){
+    int a,b,c;
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a,&b,&c);
+
+   a>b?a>c?printf("%d",a):printf("%d",c):b>c?printf("%d",b):printf("%d",c);
+
+    // (a>b)?(a>c)?printf("%d",a):printf("%d",c):(b>c)?printf("%d",b):printf("%d",c);
+
+
+    return 0;
+}
+```
+
+(OR)
+
+```c
+// Using Conditional Operator (More Simplifying it)
+// Nesting in Conditional Operator
+
+#include <stdio.h>
+
+int main(){
+    int a,b,c;
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a,&b,&c);
+
+   printf("%d",a>b?a>c?a:c:b>c?b:c);
+
+    return 0;
+}
+```
+
+-----------
+
+## Lec 29 - if else ladder in C language
+
+NOTE: It is a special case of Nested if-else case
+
+<img src="./images/6c.png" title="" alt="" width="247">
+
+```c
+// Program to give Grade
+
+#include <stdio.h>
+
+int main(){
+    int marks;
+    printf("Enter your marks: ");
+    scanf("%d", &marks);
+    if(marks>90)
+        printf("Grade - A");
+    else{
+        if(marks>80)
+            printf("Grade - B");
+        else{
+            if(marks>70)
+                printf("Grade - C");
+            else
+            printf("Grade - D");
+        }
+    }
+
+    return 0;
+}
+```
+
+<img title="" src="./images/6d.png" alt="" width="323">
+
+(OR) - We are simplifying it...
+
+```c
+// Removing Curlie Brackets and Arranging
+
+#include <stdio.h>
+
+int main(){
+    int marks;
+    printf("Enter your marks: ");
+    scanf("%d", &marks);
+    if(marks>90)
+        printf("Grade - A");
+    else if(marks>80)
+        printf("Grade - B");
+    else if(marks>70)
+        printf("Grade - C");
+    else
+        printf("Grade - D");
+
+    return 0;
+}
+```
+
+--------------
+
+## Lec 30    (Lecture 7 - Loops in C part - 1)
 
 Iterative Control Instructions:
 
@@ -256,9 +504,39 @@ int main(){
 }
 ```
 
-----------------------------------
+-------------
 
-## Lec 23    (Lecture 7 - Loops in C part - 3)
+## Lec 31 - (Lecture 7 - Loops in C part - 2)
+
+Comparision Between while, do-while, for: 
+
+<img title="" src="./images/6e.png" alt="" width="561">
+
+From above Examples:
+
+<u>**while:**</u>
+
+Here, Conditioned checked for "while" -> 6 times checked
+
+Also called "Entry Control Loop"
+
+Go inside the blocks (Brackets i.e. () ) when the condition is TRUE...
+
+**<u>do-while:</u>**
+
+Here, Conditioned checked for "do-while" -> 5 times checked
+
+Also called "Exit Control Loop"
+
+NOTE: Here, If the condition were FALSE, the code will run atleast 1 time...  
+
+**<u>for:</u>**
+
+For controlling any loop Initialisation, Condition and Flow can work together... So, it is good for Readibilty...
+
+---------------------
+
+## Lec 32  - (Lecture 7 - Loops in C part - 3)
 
 **<u>BREAK</u>**
 
@@ -286,7 +564,7 @@ int main(){
 
 -----------------
 
-## Lec 24    (Lecture 8 - Switch Case in C: part - 1)
+## Lec 33 - (Lecture 8 - Switch Case in C: part - 1)
 
 **<u>SWITCH CASE</u>**
 
@@ -357,7 +635,7 @@ int main(){
 
 ----------------------------------------
 
-## Lec - 25 (Lecture 9 - Functions in C: Part - 1)
+## Lec - 34 (Lecture 9 - Functions in C: Part - 1)
 
 <u>**What is function?**</u>
 
@@ -409,7 +687,7 @@ Interview Notes:
 
 ---------------------------
 
-## Lec - 26 (Lecture 9 - Functions in C: Part - 2)
+## Lec - 35 (Lecture 9 - Functions in C: Part - 2)
 
 Ways to define a function:
 
@@ -444,8 +722,6 @@ void add()
 
 NOTE: **#include <conio.h>** is not a standard library... Don't use
 
-
-
 If function is return Nothing then for defining it we use "**void**" 
 
 Note: Definition of Predefined functions are present in the library file and The Decleration of that word is present in the Header File...
@@ -458,7 +734,7 @@ Function declaration is used for compilers, so that they will understand the mea
 
 ----------------------------------
 
-## Lec - 27 (Lecture 9 - Functions in C: Part - 3)
+## Lec - 36 (Lecture 9 - Functions in C: Part - 3)
 
 **<u>Takes Something, Returns Nothing</u>**
 
@@ -521,7 +797,7 @@ void main()
 
 --------------------
 
-## Lec - 28 (Lecture 9 - Functions in C: Part - 4)
+## Lec - 37 (Lecture 9 - Functions in C: Part - 4)
 
 **<u>Takes Nothing, Returns Something</u>**
 
@@ -581,8 +857,8 @@ int add(int a, int b)
 
 ---------------------
 
-## Lec - 29 (Lecture 9 - Functions in C: Part - 5)
+## Lec - 38 (Lecture 9 - Functions in C: Part - 5)
 
-**<u>Takes Something, Returns Something (Contd.)</u>**
+**<u>Takes Something, Returns Something  (Contd.)</u>**
 
 <img src="./images/15.png" title="" alt="" width="513">
